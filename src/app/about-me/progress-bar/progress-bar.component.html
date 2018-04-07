@@ -1,0 +1,15 @@
+
+<div class="skill-bars">
+  <div class="skill-bars__item" *ngFor="let item of skills">
+    <div class="skill-bars__item_header">
+      <p class="skill-bars__title">
+        {{item.title}}
+      </p>
+      <a href="{{item.link}}" class="skill-bars-link" title="See certificate">
+        <i class="icon-link-ext skill-bars__icon"></i>
+      </a>
+    </div>
+    <mat-progress-bar class="bar" [value]="item.value/10" >
+    </mat-progress-bar>
+  </div>
+</div>

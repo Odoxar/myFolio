@@ -1,0 +1,21 @@
+@import '../../scss/variables.scss';
+
+.soc {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+
+  &__link {
+    color: $main-black;
+    display: block;
+    padding: 4px 5px;
+    border: 1px solid $main-black;
+    border-radius: 50%;
+    transition: 0.3s;
+    &:hover {
+      color: $main-blue;
+      border: 1px solid $main-blue;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+<ul class="info__list" *ngIf="contact">
+  <li class="info__item" *ngFor="let item of info">
+    <p class="info-text">
+      <span class="info-title">{{item.title}}</span>
+      {{item.value}}
+    </p>
+  </li>
+</ul>
+<ul class="info__list" *ngIf="!contact">
+  <li class="info__item" *ngFor="let item of contacts">
+    <p class="info-text">
+      <span class="info-title">{{item.title}}</span>
+      {{item.value}}
+    </p>
+  </li>
+</ul>

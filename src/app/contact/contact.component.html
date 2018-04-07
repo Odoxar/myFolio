@@ -1,0 +1,56 @@
+<section class="section contact">
+  <div class="contact__header">
+    <div class="container">
+      <div class="row">
+        <h2 class="contact__title title col-sm-12"> Contact me</h2>
+      </div>
+    </div>
+  </div>
+  <div class="contact-container">
+    <div class="container">
+      <div class="row">
+        <div class="contact__form-container col-md-7">
+          <h3 class="contact__form_title title__secondary">Contact form</h3>
+          <form 
+            class="contact__form form-group" 
+            [formGroup]="form" 
+            (ngSubmit)="onSubmit()"
+          >
+            <input 
+              type="text" 
+              formControlName="name" 
+              placeholder="Name" 
+              class="contact__form_input form-control"
+            >
+            <input 
+              type="email" 
+              formControlName="email" 
+              required 
+              placeholder="Email" 
+              name="_replyto"
+              class="contact__form_input form-control"
+            >
+            <textarea  
+              formControlName="message" 
+              rows="5" 
+              placeholder="Message"
+              class="contact__form_input contact__form_message form-control"
+            ></textarea>
+            <input 
+              type="submit" 
+              class="btn btn-info contact__form_btn" 
+              value="send message"
+            >
+          </form>
+        </div>
+        <div class="contact__info col-md-5">
+          <h3 class="contact__info_title title__secondary">Contact info</h3>
+          <dsa-my-info></dsa-my-info>
+          <div class="contact__info_soc">
+            <dsa-social></dsa-social>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

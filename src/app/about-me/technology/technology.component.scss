@@ -1,0 +1,20 @@
+@import "../../shared/scss/variables.scss";
+
+.skill__others {
+  column-count: 3;
+  //margin-left:  40px;
+  &_category {
+    font-family: $main-text;;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+}
+/* .skill__other-container {
+  //display: flex;
+  //justify-content: center;
+} */
+.skill__other_logo {
+  height: 35px;
+  margin: 10px;
+}

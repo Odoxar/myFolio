@@ -1,0 +1,19 @@
+<div class="skill__others">
+  <div class="skill__others_row" *ngFor="let row of logos">
+    <p class="skill__others_category">{{row.category}}:</p>
+    <div class="skill__other-container">
+      <img 
+        *ngFor="let item of row.logo" 
+        class="skill__other_logo" 
+        [src]="'assets/images/logos/' + item.link" 
+        [alt]="item.title" 
+        [title]="item.title"
+      >
+    </div>
+  </div>
+</div>
+
+<!-- <div class="skill__others">
+      <img *ngFor="let item of logos" class="skill__other_logo" [src]="'assets/images/logos/' + item.link" [alt]="item.title"
+        [title]="item.title">
+</div> -->
