@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoModel } from '../../shared/model/info/info.model';
+import { InfoModel } from '../../shared/model/info.model';
 import { ActivatedRoute, UrlSegment } from '@angular/router';
 
 @Component({

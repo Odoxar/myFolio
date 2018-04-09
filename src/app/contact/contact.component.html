@@ -11,36 +11,53 @@
       <div class="row">
         <div class="contact__form-container col-md-7">
           <h3 class="contact__form_title title__secondary">Contact form</h3>
+          <div *ngIf="message.text" class="alert alert-{{message.type}}">{{message.text}}</div>
           <form 
             class="contact__form form-group" 
             [formGroup]="form" 
             (ngSubmit)="onSubmit()"
           >
-            <input 
-              type="text" 
-              formControlName="name" 
-              placeholder="Name" 
-              class="contact__form_input form-control"
-            >
-            <input 
-              type="email" 
-              formControlName="email" 
-              required 
-              placeholder="Email" 
-              name="_replyto"
-              class="contact__form_input form-control"
-            >
-            <textarea  
-              formControlName="message" 
-              rows="5" 
-              placeholder="Message"
-              class="contact__form_input contact__form_message form-control"
-            ></textarea>
-            <input 
-              type="submit" 
-              class="btn btn-info contact__form_btn" 
-              value="send message"
-            >
+            <div class="form-group" [ngClass]="(form.get('name').touched ? ((form.get('name').invalid && form.get('name').invalid) ? 'has-error' : 'has-success') : '' )">
+              <span class="form-help-text" *ngIf="form.get('name').invalid && form.get('name').touched">
+                <span *ngIf="form.get('name')['errors']['required']">Name is required.</span>
+              </span>
+              <input 
+                type="text" 
+                formControlName="name" 
+                placeholder="Name" 
+                class="contact__form_input form-control underline"
+              >
+            </div>  
+            <div class="form-group" [ngClass]="(form.get('email').touched ? ((form.get('email').invalid && form.get('email').invalid) ? 'has-error' : 'has-success') : '' )">
+              <span class="form-help-text" *ngIf="form.get('email').invalid && form.get('email').touched">
+                <span *ngIf="form.get('email')['errors']['required']">Email is required.</span>
+                <span *ngIf="form.get('email')['errors']['email']">Enter a correct Email.</span>
+              </span>
+              <input 
+                type="email" 
+                formControlName="email" 
+                placeholder="Email" 
+                class="contact__form_input form-control underlined"
+              >
+            </div>
+            <div class="form-group" [ngClass]="(form.get('message').touched ? ((form.get('message').invalid && form.get('message').invalid) ? 'has-error' : 'has-success') : '' )">
+              <span class="form-help-text" *ngIf="form.get('message').invalid && form.get('message').touched">
+                <span *ngIf="form.get('message')['errors']['required']">Message is required.</span>
+                <span *ngIf="form.get('message')['errors']['minLength']">Message mast have at leest {{ form.get('message')['errors']['minlength']['requiredLength']}} symbols. Now {{ form.get('message')['errors']['minlength']['actualLength'] }}</span>
+              </span>
+              <textarea  
+                formControlName="message" 
+                rows="5" 
+                placeholder="Message"
+                class="contact__form_input contact__form_message form-control underline"
+              ></textarea>
+            </div>
+              <input 
+               [disabled]="form.invalid"
+                type="submit" 
+                class="btn btn-info contact__form_btn" 
+                value="send message"
+              >
           </form>
         </div>
         <div class="contact__info col-md-5">

@@ -1,4 +1,4 @@
-import { LogoModel } from "../logo/logo.model";
+import { LogoModel } from "./logo.model";
 
 export class TechnologyModel {
   constructor(

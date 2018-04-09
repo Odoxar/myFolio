@@ -1,7 +1,9 @@
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
+
+import { FeedbackService } from '../shared/services/feedback.service';
+import { Message } from '../shared/model/message.model';
 
 @Component({
   selector: 'app-contact',
@@ -9,13 +11,13 @@ import { Observable } from 'rxjs'
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  form: FormGroup;
+  public form: FormGroup;
+  public message: Message;
 
-  scriptURL = 'http://formspree.io/9b627f25-ba76-4568-80b8-e856d4b6f174';
-  
-  constructor(private http: HttpClient) { }
+  constructor(private feedback: FeedbackService) { }
 
   ngOnInit() {
+    this.message = new Message('danger', '');
     this.form = new FormGroup({
       name: new FormControl(
         null, [
@@ -29,39 +31,23 @@ export class ContactComponent implements OnInit {
         ]
       ),
       message: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(5)
       ]),
     })
   }
   onSubmit() {
+    this.feedback.sendDataToEmail(this.form)
+    this.showMessage({
+      text: 'Your message send',
+      type: 'success'
+    })
+  }
 
-    let headers = new HttpHeaders({
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-      'Content-Type': 'application/x-www-form-urlencoded'
-      })
-
-    const requestOptions = {
-       headers: headers
-    };
-    
-
-    let url = "https://www.formingo.co/submit/9b627f25-ba76-4568-80b8-e856d4b6f174";
-
-
-     let data = `name=${this.form.value.name}&email=${this.form.value.email}&message=${this.form.value.message}`;
-    /* JSON.stringify(this.form.value); */
-/* `name=${ this.form.value.name }&email=${ this.form.value.email }&message=${ this.form.value.message }`; */
-    console.log(data);
-    
-    return this.http.post(url, JSON.stringify({
-      name: this.form.value.name,
-      email: this.form.value.email,
-      message: this.form.value.message,
-    }), requestOptions)
-      .subscribe(response => {
-        console.log('email sent', response);
-      })
-      
+  private showMessage(message: Message) {
+    this.message = message;
+    window.setTimeout(() => {
+      this.message.text = '';
+    }, 5000);
   }
 }
-

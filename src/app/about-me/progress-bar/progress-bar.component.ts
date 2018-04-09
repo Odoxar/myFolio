@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillModel } from "../../shared/model/skill/skill.model";
+import { SkillModel } from "../../shared/model/skill.model";
 
 @Component({
   selector: 'dsa-progress-bar',

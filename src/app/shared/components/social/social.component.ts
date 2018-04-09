@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialModel } from "../../model/social/social.model";
+import { SocialModel } from "../../model/social.model";
 
 @Component({
   selector: 'dsa-social',

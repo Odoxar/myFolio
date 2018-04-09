@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TechnologyModel } from '../../shared/model/technology/technology.model';
-//import { LogoModel } from '../../shared/model/logo/logo.model';
+import { TechnologyModel } from '../../shared/model/technology.model';
+
 
 @Component({
   selector: 'dsa-technology',

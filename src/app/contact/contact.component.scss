@@ -55,3 +55,20 @@
     margin-right: 10px;
   }
 }
+
+.form-group.has-error .form-help-text {
+  color: #fb494d;
+  font-size: 13px;
+}
+.form-group.has-error .form-control {
+  border-color: #fb494d; 
+}
+
+.form-group.has-success .form-help-text {
+  color: #8cde33;
+  font-size: 13px;
+}
+
+.form-group.has-success .form-control {
+  border-color: #8cde33; 
+}
