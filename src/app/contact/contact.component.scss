@@ -1,7 +1,8 @@
 @import '../shared/scss/variables.scss';
 
-.contact-container {
-  padding: 0 10px;
+.contact-container, 
+.location-container {
+  padding: 0 10px 30px;
 }
 
 .contact__form_title {
@@ -72,3 +73,4 @@
 .form-group.has-success .form-control {
   border-color: #8cde33; 
 }
+

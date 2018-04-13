@@ -3,5 +3,28 @@
     <div class="row">
       <h2 class="portfolio__title title col-sm-12"> Portfolio</h2>
     </div>
+    <div class="portfolio__navbar navbar col-sm-12">
+      <ul class="navbar__list">
+        <li class="navbar__item" *ngFor="let item of category">
+          <a href="" class="navbar__link">{{item}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="portfolio__sort sort col-sm-12">
+      <ul class="sort__list">
+        <li class="sort__item" *ngFor="let item of sort">
+          <a href="" class="sort__link">{{item}}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="portfolio__gallery">
+  <div class="container">
+    <div class="row">
+      <div class="portfolio__gallery-container">
+        <div class="portfolio__item " *ngFor="let item of items"></div>
+      </div>
+    </div>
   </div>
 </div>

@@ -3,8 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AgmCoreModule } from '@agm/core';
+
 import { AppRoutingModule } from './app-routing.module';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressBarModule, MatGridListModule } from '@angular/material';
 
 import { 
   AppComponent,
@@ -18,10 +20,13 @@ import {
   FooterComponent,
   ProgressBarComponent,
   MyInfoComponent,
-  TechnologyComponent
+  TechnologyComponent,
+  MapComponent
 } from './index';
 
 import { FeedbackService } from "./shared/services/feedback.service";
+import { IndoorDataService } from './shared/services/indoor-data.service';
+import { PortfolioService } from './portfolio/portfolio.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +42,7 @@ import { FeedbackService } from "./shared/services/feedback.service";
     ProgressBarComponent,
     MyInfoComponent,
     TechnologyComponent,
-
+    MapComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,9 +51,12 @@ import { FeedbackService } from "./shared/services/feedback.service";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBI9Vtf3snZlQC_-XFes7yrdKj6STdwaII'
+    }),
+    MatGridListModule
   ],
-  providers: [FeedbackService],
+  providers: [FeedbackService, IndoorDataService, PortfolioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

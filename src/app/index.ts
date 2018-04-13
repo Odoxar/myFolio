@@ -10,4 +10,4 @@ export * from './footer/footer.component';
 export * from './about-me/progress-bar/progress-bar.component';
 export * from './about-me/my-info/my-info.component';
 export * from './about-me/technology/technology.component';
-export * from "./shared/key/key";
+export * from './contact/map/map.component';

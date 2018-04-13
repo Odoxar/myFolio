@@ -23,6 +23,7 @@
         "../node_modules/lato-font/css/lato-font.min.css",
         "assets/fonts/fontello/css/resume-fonts.css",
         "styles.scss"
+       
 
       ],
       "scripts": [],

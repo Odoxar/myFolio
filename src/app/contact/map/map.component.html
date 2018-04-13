@@ -1,0 +1,7 @@
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" class="sebm-google-map-container">
+  <agm-data-layer *ngIf="geoJsonObject"  [geoJson]="geoJsonObject" [style]="styleFunc">
+  </agm-data-layer>
+  <agm-info-window [latitude]="lat" [longitude]="lng" isOpen="true">
+    Kyiv
+  </agm-info-window>
+</agm-map>
