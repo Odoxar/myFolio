@@ -1,14 +1,26 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-lg-3 col-xs">
      <dsa-aside></dsa-aside>
     </div>
-    <div class="col-md-9">
-      <dsa-nav></dsa-nav>
+    <div class="col-lg-9 col-xs">
+      <div [ngClass]="'menu-container'">
+        <dsa-nav></dsa-nav>
+      </div>
+      <div class="mobile__menu-container" >
+        <button 
+          class="nav__mobile_btn mobile__btn" 
+          [ngClass]="{'mobile__btn_active': menu}" 
+          (click)="toggleMenu()" 
+        >
+          <i class="icon-menu"></i>
+        </button>
+        <dsa-nav *ngIf="menu" [@headerAnimations]="menu" (clickMenu)="menuClicked($event)" ></dsa-nav>
+      </div>
 
-      <div class="main-container">
-        <router-outlet></router-outlet>
+      <div class="main-container" [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
         <dsa-footer></dsa-footer>
       </div>
     </div>

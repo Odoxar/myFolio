@@ -1,0 +1,48 @@
+<div class="screen__btn-container">
+  <button
+    class="btn btn-default screen__btn detail-btn"
+    [class.screen__btn_active]="screen == 'pc'"
+    (click)="screen = 'pc'"
+    title="desktop screen"
+  >
+    <i class="soc__icon icon-desktop"></i>
+  </button>
+  <button
+    class="btn btn-default screen__btn detail-btn"
+    [class.screen__btn_active]="screen == 'laptop'"
+    (click)="screen = 'laptop'"
+    title="laptop screen"
+  >
+    <i class="soc__icon icon-laptop"></i>
+  </button>
+  <button
+    class="btn btn-default screen__btn detail-btn"
+    [class.screen__btn_active]="screen == 'tablet'"
+    (click)="screen = 'tablet'"
+    title="tablet screen"
+  >
+    <i class="soc__icon icon-tablet"></i>
+  </button>
+  <button
+    class="btn btn-default screen__btn detail-btn"
+    [class.screen__btn_active]="screen == 'mobile'"
+    (click)="screen = 'mobile'"
+    title="mobile screen"
+  >
+    <i class="soc__icon icon-mobile"></i>
+  </button>
+</div>
+<div class="screen-container" [ngSwitch]="screen" [@fadeAnimation]="screen">
+  <div class="screen-pc" *ngSwitchCase="'pc'" >
+    <iframe [src]="item.link | safe" frameborder="0"></iframe>
+  </div>
+  <div class="screen-laptop" *ngSwitchCase="'laptop'">
+    <iframe [src]="item.link | safe" frameborder="0"></iframe>
+  </div>
+  <div class="screen-tablet" *ngSwitchCase="'tablet'">
+    <iframe [src]="item.link | safe" frameborder="0"></iframe>
+  </div>
+  <div class="screen-mobile" *ngSwitchCase="'mobile'">
+    <iframe [src]="item.link | safe" frameborder="0"></iframe>
+  </div>
+</div>

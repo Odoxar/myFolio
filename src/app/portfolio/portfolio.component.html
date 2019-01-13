@@ -1,19 +1,18 @@
-<div class="portfolio__header">
+<div class="portfolio__header " *ngIf="items">
   <div class="container">
     <div class="row">
       <h2 class="portfolio__title title col-sm-12"> Portfolio</h2>
     </div>
-    <div class="portfolio__navbar navbar col-sm-12">
-      <ul class="navbar__list">
-        <li class="navbar__item" *ngFor="let item of category">
-          <a href="" class="navbar__link">{{item}}</a>
+    <div class="portfolio__navbar navbar col-sm-12" >
+      <button class="navbar-mobile__filter_btn" [ngClass]="{'navbar-mobile__filter_active': mobileFilter}" (click)="mobileFilter = !mobileFilter"><i class="icon-filter"></i></button>
+      <ul class="navbar-mobile__list" *ngIf="mobileFilter" [@fadeInOut]="mobileFilter">
+        <li class="navbar-mobile__item" *ngFor="let category of categories">
+          <button class="navbar__btn btn" [class.navbar__btn_active]="filterBy==(category)" (click)="filterBy=category" >{{category}}</button>
         </li>
       </ul>
-    </div>
-    <div class="portfolio__sort sort col-sm-12">
-      <ul class="sort__list">
-        <li class="sort__item" *ngFor="let item of sort">
-          <a href="" class="sort__link">{{item}}</a>
+      <ul class="navbar__list">
+        <li class="navbar__item" *ngFor="let category of categories">
+          <button class="navbar__btn btn" [class.navbar__btn_active]="filterBy==(category)" (click)="filterBy=category">{{category}}</button>
         </li>
       </ul>
     </div>
@@ -23,7 +22,26 @@
   <div class="container">
     <div class="row">
       <div class="portfolio__gallery-container">
-        <div class="portfolio__item " *ngFor="let item of items"></div>
+        <div 
+          *ngFor="let item of (items | portfolioFilter:filterBy); let ind=index" 
+          class="portfolio__item" 
+          (mouseenter)="hover=ind"
+          (mouseleave)="hover=null"
+          [@fadeInOut]
+        >
+          <a  class="portfolio__link">
+            <img [src]="'assets/worksLogo/' + item.imgLink" class="portfolio__image " alt="">
+          </a>
+          <div class="hover-item" @fadeInOut *ngIf="ind==hover">
+            <ul class="hover-item__list">
+              <li class="hover-item__tech" *ngFor="let tech of item.classCategory">
+                {{tech}}
+              </li>
+            </ul>
+            <p  class="btn btn-primary hover-item__btn">details</p>
+            <a class="hover-item__link" [routerLink]="item.id"> </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>

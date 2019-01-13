@@ -2,6 +2,31 @@
   <div class="container">
     <div class="row">
       <h2 class="resume__title title col-sm-12"> Resume</h2>
+      <a href="../../assets/resume/denys-siumak-resume.pdf" class="icon-file-pdf resume__link btn btn-primary" title="download full resume in pdf file"></a>
     </div>
   </div>
+</div>
+<div class="resume__body">
+  <ul class="resume__list resume__list_education">   
+    <div class=" resume__icon icon__education icon-graduation-cap"></div>
+    <li class="resume__item" *ngFor="let item of education">
+      <div class="resume__item_content">
+        <h4  class="resume__item_title">{{item.institution}}</h4>
+        <p class="resume__item_period">{{item.period}}</p>
+        <p class="resume__item_description">{{item.description}}</p>
+      </div>
+    </li>
+    <div class="resume__devider"></div>
+  </ul>
+  <ul class="resume__list resume__list_work">
+    <div class="resume__icon icon-briefcase"></div>
+    <li class="resume__item" *ngFor="let item of work">
+      <div class="resume__item_content">
+        <h4 class="resume__item_title">{{item.workPlace}}</h4>
+        <p class="resume__item_period">{{item.period}}</p>
+        <p class="resume__item_description">{{item.description}}</p>
+      </div>
+      <div class="resume__devider"></div>
+    </li>
+  </ul>
 </div>

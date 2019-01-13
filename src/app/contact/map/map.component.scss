@@ -1,4 +1,12 @@
+@import "assets/scss/fonts.scss";
 
 agm-map {
   height: 300px;
+}
+
+.info-window-text {
+  font-family: Lato, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2574a9;
 }

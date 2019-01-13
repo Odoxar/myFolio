@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'about-me', pathMatch: 'full' },
   { path: 'about-me', component: AboutMeComponent},
   { path: 'resume', component: ResumeComponent},
-  { path: 'portfolio', component: PortfolioComponent /* loadChildren: './system/system.module#SystemModule' */ },
+  /* { path: 'portfolio', component: PortfolioComponent}, */
   { path: 'contact-me', component: ContactComponent}
   /* { path: '**', component: NotFoundComponent } */
 ];

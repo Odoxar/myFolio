@@ -1,0 +1,46 @@
+@import '../../../assets/scss/variables.scss';
+
+.portfolio-detail {
+  
+  &__header-container {
+    border-bottom: $main-border; 
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+  &__header {
+    height: 81px;
+  }
+  &__adaptive_image {
+    width: 100%;
+    padding: 0 10px;
+  }
+  &__adaptive {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  &__content {
+     margin-bottom: 40px;
+  }
+}
+
+.source {
+  &__link {
+    &_git {
+      margin-right: 10px;
+    }
+  }
+}
+
+.detail-btn {
+  background-color: $main-blue;
+  border: 1px solid $main-blue;
+  transition: all .3s ease-out;
+  &:hover {
+    background-color: transparent;
+    color: $main-blue;
+    border: 1px solid $main-blue;
+  }
+}
+
+

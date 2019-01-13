@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { IndoorDataService } from '../../shared/services/indoor-data.service';
 
-
 @Component({
   selector: 'dsa-map',
   templateUrl: './map.component.html',
@@ -13,7 +12,6 @@ export class MapComponent implements OnInit {
   lng: number = 30.5234;
   zoom: number = 3;
   geoJsonObject: Object;
-
 
   constructor(private indoorDataService: IndoorDataService) { }
 

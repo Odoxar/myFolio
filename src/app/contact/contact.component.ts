@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { FeedbackService } from '../shared/services/feedback.service';
 import { Message } from '../shared/model/message.model';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,45 @@ export class ContactComponent implements OnInit {
   public form: FormGroup;
   public message: Message;
 
-  constructor(private feedback: FeedbackService) { }
+  constructor(
+    private feedback: FeedbackService,
+    private metaData: Meta,
+    private title: Title,
+  ) {
+    title.setTitle('Denys Siumak | Frontend developer - contacts');
+    metaData.addTags([
+      {
+        name: 'keywords', content: `
+        Frontend, Front-end, Frontend developer, HTML, CSS, JS,
+        Web, Web developer, Javascript, ECMAScript 6, Angular, Responsive design, 
+        good website, website, Mobile Web Development, Cross-Browser
+      ` },
+      {
+        name: 'description', content: `
+        My name is Denys Siumak I'm Front-end developer.
+        The site has collected most of my entire professional 
+        activity over the past few years.
+      ` },
+      {
+        property: 'og:title', content: 'Denys Siumak | Frontend developer | Kyiv, Ukraine'
+      },
+      {
+        property: 'og:type', content: 'website'
+      },
+      {
+        property: 'og:url', content: 'https://odoxar.github.io/contacts'
+      },
+      {
+        property: 'og:image', content: 'https://odoxar.github.io/assets/foto/my-foto.jpg'
+      },
+      {
+        property: 'og:description', content: `
+          My name is Denys Siumak I'm Front-end developer.
+          The site has collected most of my entire professional 
+          activity over the past few years.
+        ` },
+    ])
+  }
 
   ngOnInit() {
     this.message = new Message('danger', '');
@@ -37,11 +76,12 @@ export class ContactComponent implements OnInit {
     })
   }
   onSubmit() {
-    this.feedback.sendDataToEmail(this.form)
+    this.feedback.sendDataToEmail(this.form);
     this.showMessage({
       text: 'Your message send',
       type: 'success'
     })
+    this.form.reset();
   }
 
   private showMessage(message: Message) {

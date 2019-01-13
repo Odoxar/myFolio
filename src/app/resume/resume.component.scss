@@ -1,0 +1,108 @@
+@import "../../assets/scss/variables.scss";
+.resume {
+  &__body{
+    margin: 0 35px 80px;
+    @media screen and (max-width: 480px) {
+      margin: 0 22px 80px;
+    }
+  }
+  &__icon {
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    background-color:  $main-blue;
+    color: $main-white;
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 50px;
+    margin: 0 35px 35px 0;
+  }
+  &__item {
+    display: flex;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    &:before {
+      content: "";
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+      width: 6px;
+      height: 6px;
+      margin: 9px 20px;
+      border-radius: 50%;
+      background-color: $main-blue;
+      z-index: 1;
+      @media screen and (max-width: 768px) {
+        padding-right: 6px;
+      }
+    }
+    &_content {
+      margin-left: 7px;
+      box-sizing: border-box;
+      font-size: 0.875rem;
+    }
+    &_title {
+      color:  #000000;
+      font-size: 1rem;/* Приближение из-за подстановки шрифтов */
+      font-weight: 600;
+      line-height: 1.5;
+    }
+    &_period {
+      color: $main-blue;
+    }
+    &_description {
+      color:  $main-gray;
+      line-height: 1.714;
+    }
+  }
+  &__list {
+    position: relative;
+    &_work {
+      & .resume__item:before {
+        padding-right: 6px;
+      }
+      & .resume__devider {
+        height: 70%;
+        @media screen and (max-width: 768px) {
+          height: 68%;
+        }
+      }
+    }
+  }
+  &__devider {
+    position: absolute;
+    top: 47px;
+    left: 22px;
+    height: 81%;
+    width: 2px;
+    background-color: $devider-gray;
+    @media screen and (max-width: 768px) {
+      height: 78%;
+    }
+    @media screen and (max-width: 506px) {
+      height: 474px;
+    }
+    @media screen and (max-width: 380px) {
+      height: 500px;
+    }
+  }
+  &__link {
+    display: block;
+    position: absolute;
+    margin: 20px 5px;
+    right: 15px;
+    background-color: $main-blue;
+    border: 1px solid $main-blue;
+    transition: all .3s ease-out;
+    &:hover {
+      background-color: transparent;
+      color: $main-black;
+      border: 1px solid $main-black;
+    }
+  }
+}
+
+.icon__education:before {
+  margin-right: 7px;
+}
+

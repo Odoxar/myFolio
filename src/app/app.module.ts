@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 import { AppRoutingModule } from './app-routing.module';
-import { MatProgressBarModule, MatGridListModule } from '@angular/material';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { 
   AppComponent,
@@ -14,7 +19,6 @@ import {
   NavComponent,
   AboutMeComponent,
   ResumeComponent,
-  PortfolioComponent,
   ContactComponent,
   SocialComponent,
   FooterComponent,
@@ -26,7 +30,9 @@ import {
 
 import { FeedbackService } from "./shared/services/feedback.service";
 import { IndoorDataService } from './shared/services/indoor-data.service';
-import { PortfolioService } from './portfolio/portfolio.service';
+import { PortfolioModule } from './portfolio/portfolio.module';
+import { SanitizeUrlPipe } from './shared/pipe/sanitizeurl.pipe';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,6 @@ import { PortfolioService } from './portfolio/portfolio.service';
     NavComponent,
     AboutMeComponent,
     ResumeComponent,
-    PortfolioComponent,
     ContactComponent,
     SocialComponent,
     FooterComponent,
@@ -43,10 +48,12 @@ import { PortfolioService } from './portfolio/portfolio.service';
     MyInfoComponent,
     TechnologyComponent,
     MapComponent,
+    SanitizeUrlPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     MatProgressBarModule,
     FormsModule,
     ReactiveFormsModule,
@@ -54,9 +61,11 @@ import { PortfolioService } from './portfolio/portfolio.service';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBI9Vtf3snZlQC_-XFes7yrdKj6STdwaII'
     }),
-    MatGridListModule
+    AgmSnazzyInfoWindowModule,
+    MatGridListModule,
+    PortfolioModule,
   ],
-  providers: [FeedbackService, IndoorDataService, PortfolioService],
+  providers: [FeedbackService, IndoorDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

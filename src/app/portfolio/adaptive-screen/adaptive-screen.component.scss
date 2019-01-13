@@ -1,0 +1,161 @@
+@import '../../../assets/scss/variables.scss';
+
+@mixin screen-main {
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: auto;
+  position: relative;
+}
+
+@mixin iframe-main {
+  position: absolute;
+  transform-origin: top left;
+  overflow-y: hidden;
+}
+
+.screen__btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.screen__btn {
+  margin-right: 10px;
+  color: $main-white;
+  background-color: $main-blue;
+  border: 1px solid $main-blue;
+  transition: all .3s ease-out;
+  &:hover {
+    background-color: transparent;
+    color: $main-blue;
+    border: 1px solid $main-blue;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  &_active {
+    background-color: transparent;
+    color: $main-blue;
+    border: 1px solid $main-blue;
+  }
+}
+.screen-pc {
+  background: url('/assets/images/devices/large-screen-optimised.png');
+  width: 566px;
+  height: 500px;
+  @include screen-main;
+  @media only screen and (max-width: 991px) {
+    background: none;
+    width: 480px;
+    height: 300px;
+  }
+  @media only screen and (max-width: 580px) {
+    width: 416px;
+    height: 260px;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 260px;
+    height: 163px;
+  }
+  iframe {
+    @include iframe-main;
+    top: 32px;
+    left: 29px;
+    width: 1600px;
+    height: 992px;
+    transform: scale(0.3180);
+    @media only screen and (max-width: 991px) {
+      left: 0;
+      top: 0;
+      transform: scale(0.3);
+    }
+    @media only screen and (max-width: 580px) {
+      
+      transform: scale(0.26);
+    }
+    @media only screen and (max-width: 480px) {
+      transform: scale(0.163);
+    }
+  }
+}
+
+.screen-laptop {
+  background-image: url('/assets/images/devices/laptop-screen-optimised.png');
+  width: 615px;
+  height: 366px;
+  @include screen-main;
+  @media only screen and (max-width: 991px) {
+    background: none;
+    width: 480px;
+    height: 305px;
+  }
+  @media only screen and (max-width: 580px) {
+    width: 416px;
+    height: 270px;
+  }
+  @media only screen and (max-width: 480px) {
+    width: 260px;
+    height: 165px;
+  }
+    iframe {
+    @include iframe-main;
+    width: 1280px;
+    height: 807px;
+    top: 22px;
+    left: 79px;
+    transform: scale(0.357);
+    @media only screen and (max-width: 991px) {
+      left: 0;
+      top: 0;
+      transform: scale(0.374);
+    }
+    @media only screen and (max-width: 580px) {
+      
+      transform: scale(0.33);
+    }
+    @media only screen and (max-width: 480px) {
+      transform: scale(0.202);
+    }
+  }
+}
+
+.screen-tablet {
+  background-image: url('/assets/images/devices/ipad-optimised.png');
+  width: 384px;
+  height: 490px;
+  @include screen-main;
+  @media only screen and (max-width: 480px) {
+    background: none;
+    width: 270px;
+    height: 300px;
+  }
+  iframe {
+    @include iframe-main;
+    width: 768px;
+    height: 1024px;
+    top: 44px;
+    left: 44px;
+    transform: scale(0.389);
+    @media only screen and (max-width: 480px) {
+      left: 0;
+      top: 0;
+      transform: scale(0.34);
+      height: 845px;
+    }
+  }
+}
+
+.screen-mobile {
+  background-image: url('/assets/images/devices/iphone-optimised.png');
+  width: 192px;
+  height: 420px;
+  @include screen-main;
+  iframe {
+    @include iframe-main;
+    width: 324px;
+    height: 461px;
+    top: 77px;
+    left: 16px;
+    transform: scale(0.497);
+  }
+}

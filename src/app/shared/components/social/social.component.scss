@@ -1,11 +1,13 @@
-@import '../../scss/variables.scss';
-
+@import "assets/scss/fonts.scss";
+@import '../../../../assets/scss/variables.scss';
 .soc {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
   padding: 20px 0;
-
+  @media screen and (max-width: 575px) {
+    padding: 10px 0;
+  }
   &__link {
     color: $main-black;
     display: block;

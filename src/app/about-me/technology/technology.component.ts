@@ -3,54 +3,58 @@ import { TechnologyModel } from '../../shared/model/technology.model';
 
 
 @Component({
-  selector: 'dsa-technology',
-  templateUrl: './technology.component.html',
-  styleUrls: ['./technology.component.scss']
+  selector: "dsa-technology",
+  templateUrl: "./technology.component.html",
+  styleUrls: ["./technology.component.scss"]
 })
 export class TechnologyComponent implements OnInit {
   logos: TechnologyModel[] = [
     {
-      category: 'OS',
+      category: "OS",
       logo: [
         {
-          title: 'Linux',
-          link: 'linux.png'
-        }
-      ]
-    },
-    {
-      category: 'Language spec',
-      logo: [
-        {
-          title: 'TypeScript',
-          link: 'ts.png'
-        }
-      ]
-    },
-    {
-      category: 'Build tool',
-      logo: [
-        {
-          title: 'WebPack',
-          link: 'webpack.png'
+          title: "Linux",
+          link: "linux.png"
         },
         {
-          title: 'Gulp',
-          link: 'gulp.png'
+          title: "Windows",
+          link: "windows.png"
         }
       ]
     },
     {
-      category: 'Preproccesors',
+      category: "Language spec",
       logo: [
         {
-          title: 'Sass(Scss)',
-          link: 'sass.png'
+          title: "TypeScript",
+          link: "ts.png"
+        }
+      ]
+    },
+    {
+      category: "Build tool",
+      logo: [
+        {
+          title: "WebPack",
+          link: "webpack.png"
         },
         {
-          title: 'Less',
-          link: 'less.png'
-        }/* ,
+          title: "Gulp",
+          link: "gulp.png"
+        }
+      ]
+    },
+    {
+      category: "Preproccesors",
+      logo: [
+        {
+          title: "Sass(Scss)",
+          link: "sass.png"
+        },
+        {
+          title: "Less",
+          link: "less.png"
+        } /* ,
         {
           title: 'Pug(Jade)',
           link: 'pug.png'
@@ -58,63 +62,63 @@ export class TechnologyComponent implements OnInit {
       ]
     },
     {
-      category: 'Framework',
+      category: "Framework",
       logo: [
         {
-          title: 'Bootstrap',
-          link: 'bootstrap-logo.jpg'
+          title: "Bootstrap",
+          link: "bootstrap-logo.jpg"
         }
       ]
     },
     {
-      category: 'Versions control system',
+      category: "Versions control system",
       logo: [
         {
-          title: 'Git',
-          link: 'git.png'
+          title: "Git",
+          link: "git.png"
         }
       ]
     },
     {
-      category: 'Package managers',
+      category: "Package managers",
       logo: [
         {
-          title: 'npm',
-          link: 'npm.png'
+          title: "npm",
+          link: "npm.png"
         }
       ]
     },
     {
-      category: 'PSD editors',
+      category: "PSD editors",
       logo: [
         {
-          title: 'Photoshop',
-          link: 'photoshop.png'
+          title: "Photoshop",
+          link: "photoshop.png"
         },
         {
-          title: 'Adobe creative cloud (assets) ',
-          link: 'assets.png'
+          title: "Adobe creative cloud (assets) ",
+          link: "assets.png"
         },
         {
-          title: 'Avocode',
-          link: 'avocode.png'
+          title: "Avocode",
+          link: "avocode.png"
         }
       ]
     },
     {
-      category: 'Text editors',
+      category: "Text editors",
       logo: [
         {
-          title: 'Visual studio code',
-          link: 'vscode.png'
+          title: "Visual studio code",
+          link: "vscode.png"
         },
         {
-          title: 'Sublime text',
-          link: 'sublime.jpg'
-        },
+          title: "Sublime text",
+          link: "sublime.jpg"
+        }
       ]
     }
-  ]
+  ];
 
   /*  logos: LogoModel[] = [
     {
@@ -176,9 +180,7 @@ export class TechnologyComponent implements OnInit {
       link: 'sublime.jpg'
     },
   ] */
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -1,5 +1,5 @@
-@import '../../shared/scss/variables.scss';
-
+@import "assets/scss/fonts.scss";
+@import '../../../assets/scss/variables.scss';
 .info__list {
   list-style: none;
   padding-left: 0;
@@ -7,7 +7,7 @@
 
 .info-text {
   font-family: $main-text;
-  color:  $main-gray;
+  color: $main-gray;
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 2.571;

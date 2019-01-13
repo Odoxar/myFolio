@@ -1,7 +1,18 @@
 <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" class="sebm-google-map-container">
   <agm-data-layer *ngIf="geoJsonObject"  [geoJson]="geoJsonObject" [style]="styleFunc">
   </agm-data-layer>
-  <agm-info-window [latitude]="lat" [longitude]="lng" isOpen="true">
-    Kyiv
-  </agm-info-window>
+  <agm-snazzy-info-window 
+    [isOpen]="true" 
+    [latitude]="lat" 
+    [longitude]="lng" 
+    [closeWhenOthersOpen]="true"
+    [closeOnMapClick]="false"
+    [showCloseButton]="false"
+    [shadow]="{h:'0px', v:'3px', blur:'6px', spread:'0px', opacity:0.5, color:'#000'}"
+    [padding]="'0'"
+  >
+    <ng-template>
+      <span class="info-window-text">Kyiv</span>
+    </ng-template>
+  </agm-snazzy-info-window>
 </agm-map>

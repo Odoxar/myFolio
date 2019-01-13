@@ -1,0 +1,51 @@
+@import "assets/scss/fonts.scss";
+@import '../../../../assets/scss/variables.scss';
+.aside {
+  @media screen and (max-width: 992px) {
+    display: flex;
+    position: relative;
+    z-index: 1;
+  }
+  &_img {
+    width: 100%;
+    margin-bottom: 30px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    @media screen and (max-width: 992px) {
+      width: 30%;
+      height: 30%;
+      margin-bottom: 0;
+    }
+    @media screen and (max-width: 380px) {
+      width: 40%;
+      height: 40%;
+    }
+  }
+  &__content {
+    align-self: stretch;
+    margin: auto;
+  }
+  &__title {
+    text-align: center;
+    font-family: $main-text;
+    padding-bottom: 20px;
+    color: $main-black;
+    border-bottom: $main-border;
+    @media screen and (max-width: 575px) {
+      padding-bottom: 0;
+    }
+    &_name {
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 0.9;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    &_prof {
+      color: $main-gray;
+      font-size: 1rem;
+      font-weight: 500;
+      line-height: 1.125;
+    }
+  }
+}

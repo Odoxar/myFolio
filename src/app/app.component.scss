@@ -1,0 +1,43 @@
+@import "../assets/scss/variables.scss";
+/* .col-lg-9, .col-lg-3 {
+  @media screen and (min-width: 576px) {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+} */
+
+.mobile {
+  &__menu-container {
+    @media screen and (min-width: 576px) {
+      display: none;
+    }
+  }
+  &__btn {
+    position: absolute;
+    right: 25px;
+    top: -45px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    z-index: 1;
+    transition: .3s;
+    &:focus {
+      outline: none;
+    }
+    @media screen and (max-width: 335px) {
+    top: -40px;
+  }
+  }
+}
+.menu-container {
+  @media screen and (max-width: 575px) {
+    display: none;
+  }
+}
+.mobile__btn_active {
+  color: $main-blue;
+}
+.main-container {
+  display: block;
+  position: relative;
+}

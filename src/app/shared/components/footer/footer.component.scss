@@ -1,0 +1,15 @@
+@import "../../../../assets/scss/variables.scss";
+.footer {
+  padding: 0 35px;
+  height: 62px;
+  border-top: $main-border;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color:  #b4b4b4;
+  font-size: 0.813rem;
+  @media screen and (max-width: 380px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+}

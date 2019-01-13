@@ -1,6 +1,6 @@
 <ul class="soc">
   <li class="soc__item" *ngFor="let icon of social">
-    <a href={{icon.link}} target="_blank" class="soc__link">
+    <a [href]="icon.link | sanitizeUrl " target="_blank" class="soc__link" title="follow me in {{icon.name}}">
       <i class="soc__icon icon-{{icon.name}}"></i>
     </a>
   </li>
